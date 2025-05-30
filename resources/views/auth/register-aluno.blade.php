@@ -4,7 +4,7 @@
     <title>Cadastro - FATEC CONNECT</title>
 </head>
 <body>
-    <h1>Cadastro</h1>
+    <h1>Cadastro - Aluno</h1>
 
     @if ($errors->any())
         <div style="color:red;">
@@ -31,17 +31,19 @@
 
         <div>
             <label>Whatsapp:</label>
-            <input type="text" name="name" placeholder="Telefone(whatsapp)" required>
+            <input type="tel" name="telefone" placeholder="Telefone(whatsapp)" required>
         </div>
 
         <div>
             <label>Cidade:</label>
-            <input type="text" name="name" placeholder="Cidade" required>
+            <input type="text" name="city" placeholder="Cidade" required>
         </div>
 
         <div>
-            <label>Estado:</label>
-            <input type="text" name="name" placeholder="Estado" required>
+            <label for="estado">Estado:</label>
+            <select id="estado" name="estado">
+            <option value="sp">SP</option>
+            </select>
         </div>
 
         <div>

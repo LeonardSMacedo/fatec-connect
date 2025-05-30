@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use App\Http\Controllers\AlunoController;
 
 
 Route::get('/', function () {
@@ -15,6 +16,8 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
 Route::post('/register', [AuthController::class, 'register']);
+
+Route::get('/register-aluno', [AlunoController::class, 'showRegisterForm'])->name('register.aluno');
 
 Route::get('/email/verify', function () {
     return 'Verifique seu e-mail para continuar.';
@@ -31,5 +34,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return 'Bem-vindo à Dashboard!';
     });
 });
+
+
 
 
