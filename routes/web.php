@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use App\Http\Controllers\AlunoController;
+use App\Http\Controllers\ProfessorController;
+
 
 
 Route::get('/', function () {
@@ -18,6 +20,8 @@ Route::get('/register', [AuthController::class, 'showRegister'])->name('register
 Route::post('/register', [AuthController::class, 'register']);
 
 Route::get('/register-aluno', [AlunoController::class, 'showRegisterForm'])->name('register.aluno');
+Route::get('/register-professor', [ProfessorController::class, 'showRegisterForm'])->name('register.professor');
+
 
 Route::get('/email/verify', function () {
     return 'Verifique seu e-mail para continuar.';
